@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ATTICK ENTERPRISE LTD</title>
+    <title>
+Attick Enterprise Ltd Nakuru | Timber, Doors, Wood Machines & Job Vacancies
+</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Boxicons -->
@@ -89,7 +92,17 @@ body {
     box-sizing: border-box;
 }
 
+.logo-title {
+    display: flex;
+    align-items: center;   /* vertically center */
+    gap: 15px;             /* space between logo & text */
+}
 
+.logo {
+    width: 60px;           /* slightly smaller for balance */
+    height: auto;
+    margin-bottom: 0;      /* remove bottom spacing */
+}
 
 
 /* ===============================
@@ -418,6 +431,101 @@ body {
 .apply-btn:hover {
     background: var(--accent);
 }
+/* ===============================
+   PRICE SECTION
+================================= */
+.price-section {
+    padding: 80px 20px;
+    background: var(--bg-light);
+}
+
+.price-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary);
+}
+
+.price-grid {
+    max-width: 900px;
+    margin: auto;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 18px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.price-item span {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.price-images {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.price-images img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+     max-width: 500px;   /* control maximum size */
+    height: auto;     /* keeps images proportional */
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect (desktop only feel) */
+.price-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+@media (max-width: 768px) {
+    .price-images {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .price-images {
+        grid-template-columns: repeat(2, 1fr); /* always 2 columns on small phones */
+        gap: 12px;
+    }
+}
+
+.order-section {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.order-now-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: #25D366;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.order-now-btn:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
 
 </style>
 </head>
@@ -425,18 +533,25 @@ body {
 <body id="home">
 
 
-    
 <div class="header">
-    <div class="header-left">
+<div class="header-left">
+
+    <div class="logo-title">
+        <img src="logo1.png" alt="Attick Enterprise Logo" class="logo">
         <div class="company-name">ATTICK ENTERPRISE</div>
-        <div class="address">P.O. Box 16145<br>Nakuru</div>
-        <div class="accent-line"></div>
     </div>
+
+    <div class="address">P.O. Box 16145<br>Nakuru</div>
+    <div class="accent-line"></div>
+
+</div>
+
 
     <div class="menu-btn" onclick="openSidebar()">
         <i class='bx bx-menu'></i>
     </div>
 </div>
+
 
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">
@@ -474,180 +589,105 @@ body {
     </p>
 </div>
 
-<div class="gallery" id="gallery">
+<div id="prices" class="price-section">
 
-    <div class="gallery-item">
-        <img src="01.jpeg" alt="Image 01">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
+    <!-- ================= DOOR PRICES ================= -->
+    <h2>Door Prices</h2>
+
+    <div class="price-grid">
+        <div class="price-item">Button Door <span>KES 1,300</span></div>
+        <div class="price-item">Flush Door <span>KES 1,800</span></div>
+        <div class="price-item">Flush Veneer Door <span>KES 2,500</span></div>
+        <div class="price-item">Panel Mahogany Door <span>KES 2,700</span></div>
+        <div class="price-item">Panel Melamine Door <span>KES 2,750</span></div>
     </div>
 
-    <div class="gallery-item">
-        <img src="02.jpeg" alt="Image 02">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
+  <!-- DOOR IMAGES -->
+<div class="price-images">
+    <img src="doors/buttondoor.jpeg">
+    <img src="doors/flashdoor.jpeg">
+    <img src="doors/v near.jpeg">
+    <img src="doors/paneldoor.jpeg">
+   
+</div>
+
+<div class="order-section">
+    <a href="https://wa.me/254712345678?text=Hello%20I%20am%20interested%20in%20your%20Door%20Products" 
+       target="_blank" 
+       class="order-now-btn">
+       <i class='bx bxl-whatsapp'></i> Order Doors Now
+    </a>
+</div>
+
+
+    <!-- ================= MACHINE PRICES ================= -->
+    <h2>Machine Prices</h2>
+
+    <div class="price-grid">
+        <div class="price-item">Wood Mizer <span>KES 700,000</span></div>
+        <div class="price-item">Crosscut Machine <span>KES 70,000</span></div>
+        <div class="price-item">Roller Bench <span>KES 300,000</span></div>
+        <div class="price-item">Mortizer <span>KES 70,000</span></div>
+        <div class="price-item">Sharpener <span>KES 300,000</span></div>
+        <div class="price-item">Press Machine <span>KES 80,000</span></div>
+        <div class="price-item">Re-saw Machine <span>KES 150,000</span></div>
+        <div class="price-item">Push Bench <span>KES 120,000</span></div>
+    </div>
+<div class="price-images">
+    <img src="machines/woodmizer.jpeg">
+    <img src="machines/rollerbench.jpeg">
+    <img src="machines/sharpener.jpeg">
+ 
+</div>
+
+<div class="order-section">
+    <a href="https://wa.me/254712345678?text=Hello%20I%20am%20interested%20in%20your%20Machines%20(Wood%20Mizer,%20Crosscut,%20etc)." 
+       target="_blank" 
+       class="order-now-btn">
+       <i class='bx bxl-whatsapp'></i> Order Machines Now
+    </a>
+</div>
+
+
+    <!-- ================= WOOD PRICES ================= -->
+    <h2>Wood Prices</h2>
+
+    <div class="price-grid">
+        <div class="price-item">Trappers <span>KES 180</span></div>
+        <div class="price-item">Door Frame 4x2 Std <span>KES 1,000</span></div>
+        <div class="price-item">Door Frame 4x2 Vent <span>KES 1,300</span></div>
+        <div class="price-item">Door Frame 6x2 Std <span>KES 1,500</span></div>
+        <div class="price-item">Door Frame 6x2 Vent <span>KES 2,500</span></div>
+        <div class="price-item">Corners (per ft) <span>KES 20</span></div>
+        <div class="price-item">1/4 Rounds (per ft) <span>KES 15</span></div>
+        <div class="price-item">Architraves (per ft) <span>KES 18</span></div>
+        <div class="price-item">Picture Rails (per ft) <span>KES 18</span></div>
+        <div class="price-item">Skatings (per ft) <span>KES 30</span></div>
+        <div class="price-item">2x2 (per ft) <span>KES 20</span></div>
+        <div class="price-item">3x2 (per ft) <span>KES 30</span></div>
+        <div class="price-item">4x2 (per ft) <span>KES 40</span></div>
+        <div class="price-item">6x2 (per ft) <span>KES 60</span></div>
+        <div class="price-item">8x2 (per ft) <span>KES 80</span></div>
+        <div class="price-item">12x2 (per ft) <span>KES 120</span></div>
     </div>
 
-    <div class="gallery-item">
-        <img src="03.jpeg" alt="Image 03">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
+   <div class="price-images">
+    <img src="woods/picturerails.jpeg">
+    
+</div>
 
-    <div class="gallery-item">
-        <img src="04.jpeg" alt="Image 04">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
+<div class="order-section">
+    <a href="https://wa.me/254712345678?text=Hello%20I%20am%20interested%20in%20your%20Wood%20Products%20and%20Timber%20Prices." 
+       target="_blank" 
+       class="order-now-btn">
+       <i class='bx bxl-whatsapp'></i> Order Timber Now
+    </a>
+</div>
 
-    <div class="gallery-item">
-        <img src="05.jpeg" alt="Image 05">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
 
-    <div class="gallery-item">
-        <img src="06.jpeg" alt="Image 06">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
+</div>
 
-    <div class="gallery-item">
-        <img src="08.jpeg" alt="Image 08">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="09.jpeg" alt="Image 09">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="10.jpeg" alt="Image 10">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <!-- Continue same structure for remaining images -->
-
- <div class="gallery-item">
-        <img src="11.jpeg" alt="Image 11">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="12.jpeg" alt="Image 12">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="14.jpeg" alt="Image 14">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="15.jpeg" alt="Image 15">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="16.jpeg" alt="Image 16">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="18.jpeg" alt="Image 18">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="19.jpeg" alt="Image 19">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="20.jpeg" alt="Image 20">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="21.jpeg" alt="Image 21">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="22.jpeg" alt="Image 22">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="24.jpeg" alt="Image 24">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="26.jpeg" alt="Image 26">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="27.jpeg" alt="Image 27">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="29.jpeg" alt="Image 29">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-
-    <div class="gallery-item">
-        <img src="30.jpeg" alt="Image 30">
-        <a href="https://wa.me/254712345678" target="_blank" class="order-btn">
-            <i class='bx bxl-whatsapp'></i>
-        </a>
-    </div>
-    </div>
-
-    <div class="map-section" id="location">
+  <div class="map-section" id="location">
 
         <div class="map-title">Our Location</div><iframe src="https://www.google.com/maps/embed?pb=!4v1770966178369!6m8!1m7!1svIotHjIYbIciqpM8FouSBQ!2m2!1d-0.2917583647125515!2d36.04899136791451!3f281.1196936501403!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -705,6 +745,7 @@ body {
         </button>
     </form>
 </div>
+
 
 <div class="footer">
     <h3>ATTICK ENTERPRISE LTD</h3>
