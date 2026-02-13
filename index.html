@@ -323,6 +323,16 @@ body {
         width: 100%;
     }
 }
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.sidebar a i {
+    font-size: 22px;
+}
 
 </style>
 </head>
@@ -331,13 +341,28 @@ body {
 
 
         
-    <div id="sidebar" class="sidebar">
-    <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
-    <a href="#home" onclick="closeSidebar()">Home</a>
-    <a href="#about" onclick="closeSidebar()">About Us</a>
-    <a href="#location" onclick="closeSidebar()">Location</a>
-    <a href="#gallery" onclick="closeSidebar()">Gallery</a>
+<div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">
+        <i class='bx bx-x'></i>
+    </a>
+
+    <a href="#home" onclick="closeSidebar()">
+        <i class='bx bx-home'></i> Home
+    </a>
+
+    <a href="#about" onclick="closeSidebar()">
+        <i class='bx bx-info-circle'></i> About Us
+    </a>
+
+    <a href="#location" onclick="closeSidebar()">
+        <i class='bx bx-map'></i> Location
+    </a>
+
+    <a href="#gallery" onclick="closeSidebar()">
+        <i class='bx bx-image'></i> Gallery
+    </a>
 </div>
+
 
     <div class="header">
         <div class="menu-btn" onclick="openSidebar()">☰</div>
@@ -574,6 +599,7 @@ function closeSidebar() {
 
 </body>
 </html>
+
 
 
 
